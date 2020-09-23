@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Klasser
 {
@@ -11,40 +12,28 @@ namespace Klasser
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Hello World!");
-        }
-    }
+            List<string> Cars = new List<string>();
 
-    public class Bil
-    {
-
-        public string _model; //Varför public?
-        private decimal _kilometers = decimal.MinValue;
-
-
-        public string RegNr { get; set; }
-        public int Kilograms { get; set; }
-        public DateTime RegDate { get; set; }
-        public bool Electric { get; set; }
-
-        public Bil(string model)
-        {
-            _model = model;
-        }
-
-        private void Travelled(uint updateKilometers)
-        {
-            if(updateKilometers > _kilometers)
+            Car car1 = new Car("BMW Z3")
             {
-                _kilometers = updateKilometers;
+                RegNr = "POI 456",
+                RegDate = DateTime.Now, //Varför behövs parse? Varför inte bara kunna skriva datumet 2002-01-01
+                WeightKg = 1000,
+                Electric = false,
+            };
+
+            Console.WriteLine($"Modell: {car1._model}");
+            Console.WriteLine($"Registreringsnummer: {car1.RegNr}");
+            Console.WriteLine($"Registrerades: {car1.RegDate}");
+            Console.WriteLine($"Model: {car1._model}");
+
+            if (car1.Electric)
+            {
+                Console.WriteLine("Det här är en elbil.");
             }
-        }
 
-        public string ShowTravelled(decimal distance)
-        {
-            distance = _kilometers;
-            return distance.ToString();
         }
-
     }
+
+   
 }
