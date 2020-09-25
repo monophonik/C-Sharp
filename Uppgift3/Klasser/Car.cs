@@ -21,7 +21,7 @@ namespace Klasser
             _model = model;
         }
 
-        private void Travelled(uint updateKilometers)
+        public void Travelled(uint updateKilometers)
         {
             if (updateKilometers > _kilometers)
             {

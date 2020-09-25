@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Klasser
 {
@@ -12,25 +13,152 @@ namespace Klasser
         static void Main(string[] args)
         {
 
-            List<string> Cars = new List<string>();
+            List<Person> Persons = new List<Person>();
 
-            Car car1 = new Car("BMW Z3")
+            List<Car> Cars = new List<Car>();
+
+            string name;
+
+            int age;
+
+            int numberCars = 0;
+
+            //Car car1 = new Car("BMW Z3")
+            //{
+            //    RegNr = "POI 456",
+            //    RegDate = DateTime.Now, //Varför behövs parse? Varför inte bara kunna skriva datumet 2002-01-01
+            //    WeightKg = 1000,
+            //    Electric = true,
+            //};
+
+
+            //Iterera lista över personer och deras lista av bilar efter inmatning.
+            while (true)
             {
-                RegNr = "POI 456",
-                RegDate = DateTime.Now, //Varför behövs parse? Varför inte bara kunna skriva datumet 2002-01-01
-                WeightKg = 1000,
-                Electric = false,
-            };
 
-            Console.WriteLine($"Modell: {car1._model}");
-            Console.WriteLine($"Registreringsnummer: {car1.RegNr}");
-            Console.WriteLine($"Registrerades: {car1.RegDate}");
-            Console.WriteLine($"Model: {car1._model}");
+                //Person p = new Person;
+                //Persons.Add() 
+                Console.WriteLine("Vad är ditt namn? ");
+                name = Console.ReadLine();
 
-            if (car1.Electric)
-            {
-                Console.WriteLine("Det här är en elbil.");
+                Console.WriteLine("Hur gammal är du? ");
+                age = int.Parse(Console.ReadLine());
+
+                Person p = new Person(name, age);
+
+                //Hur många bilar har du?
+                Console.WriteLine("Hur många bilar har du? ");
+                numberCars = int.Parse(Console.ReadLine());
+
+                for (int i = numberCars-1; i < numberCars; i++)
+                {
+
+                    Console.Write("Vad har du för bilmodell? ");
+                    Car c = new Car(Console.ReadLine());
+
+                    Console.Write("Hur långt har din bil gått i kilometer? ");
+                    c.Travelled(uint.Parse(Console.ReadLine()));
+
+                    Console.Write("Vad har din bil för registreringsnummer? ");
+                    c.RegNr = Console.ReadLine();
+
+                    Console.Write("Vilket datum registrerades din bil (åååå-mm-dd)? ");
+                    c.RegDate = DateTime.Parse(Console.ReadLine());
+
+                    Console.Write("Vad väger din bil i kilon? ");
+                    c.WeightKg = int.Parse(Console.ReadLine());
+
+                    string test;
+                    Console.Write("Är det en elbil? Ange J eller N: ");
+                    test = Console.ReadLine();
+                    if (test == "J" || test == "j")
+                    {
+                        c.Electric = true;
+                    }
+                    else if (test == "N" || test == "n")
+                    {
+                        c.Electric = false;
+                    }
+                    else
+                    {
+                        c.Electric = false;
+                    }
+
+                    p.Cars.Add(c);
+
+                }
+                
             }
+
+
+
+            for (int i = 0; i < 4; i++)
+            {
+                
+                Console.Write("Vad har du för bilmodell? ");
+                Car c = new Car(Console.ReadLine());
+                
+                Console.Write("Hur långt har din bil gått i kilometer? ");
+                c.Travelled(uint.Parse(Console.ReadLine()));
+
+                Console.Write("Vad har din bil för registreringsnummer? ");
+                c.RegNr = Console.ReadLine();
+
+                Console.Write("Vilket datum registrerades din bil (åååå-mm-dd)? ");
+                c.RegDate = DateTime.Parse(Console.ReadLine());
+
+                Console.Write("Vad väger din bil i kilon? ");
+                c.WeightKg = int.Parse(Console.ReadLine());
+
+                string test;
+                Console.Write("Är det en elbil? Ange J eller N: ");
+                test = Console.ReadLine();
+                if (test == "J" || test == "j")
+                {
+                    c.Electric = true;
+                }
+                else if (test == "N" || test == "n")
+                {
+                    c.Electric = false;
+                }
+                else
+                {
+                    c.Electric = false;
+                }
+
+                Cars.Add(c);
+
+                Console.WriteLine();
+
+            }
+
+
+            foreach(var x in Cars)
+            {
+                Console.WriteLine($"Modell: {x._model}");
+                Console.WriteLine($"Registreringsnummer: {x.RegNr}");
+                Console.WriteLine($"Registrerades: {x.RegDate}");
+                Console.WriteLine($"Vikt: {x.WeightKg}");
+
+                if (x.Electric)
+                {
+                    Console.WriteLine("Det här är en elbil.");
+                }
+
+                Console.WriteLine();
+
+            }
+            
+
+            //Console.WriteLine($"Modell: {car1._model}");
+            //Console.WriteLine($"Registreringsnummer: {car1.RegNr}");
+            //Console.WriteLine($"Registrerades: {car1.RegDate}");
+            //Console.WriteLine($"Model: {car1._model}");
+
+            //if (car1.Electric)
+            //{
+            //    Console.WriteLine("Det här är en elbil.");
+            //}
 
         }
     }
