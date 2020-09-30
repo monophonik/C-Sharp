@@ -26,6 +26,7 @@ namespace Klasser
             //{
             //    RegNr = "POI 456",
             //    RegDate = DateTime.Now,
+
             //    WeightKg = 1000,
             //    Electric = true,
             //};
@@ -50,7 +51,7 @@ namespace Klasser
                 for (int i = 0; i < numberCars; i++)
                 {
 
-                    Console.Write("Vad har du för bilmodell? ");
+                    Console.Write("\r\nVad har du för bilmodell? ");
                     Car c = new Car(Console.ReadLine());
 
                     Console.Write("Hur långt har din bil gått i kilometer? ");
@@ -85,7 +86,7 @@ namespace Klasser
                 }
 
 
-                Console.Write("Lägg till ytterligare en person? Ange J eller N: ");
+                Console.Write("\r\nLägg till ytterligare en person? Ange J eller N: ");
                 test2 = Console.ReadLine();
                 if (test2 == "J" || test2 == "j")
                 {

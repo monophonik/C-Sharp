@@ -7,11 +7,11 @@ namespace Klasser
     public class Person
     {
 
-        private List<Car> Cars = new List<Car>();
+       //private List<Car> Cars = new List<Car>();
 
         public string Name { get; set; }
         public int Age { get; set; }
-        //public List<Car> Cars { get; set; } Varför funkar inte som property?
+        public List<Car> Cars { get; set; } //Varför funkar inte som property? FUNKAR NU
 
 
         public Person(string name, int age)
@@ -19,7 +19,7 @@ namespace Klasser
            
             Name = name;
             Age = age;
-            //Cars = new List<Car>(); Varför funkar inte som property?
+            Cars = new List<Car>();
         
         }
 
@@ -30,7 +30,10 @@ namespace Klasser
 
         public void ShowCars()
         {
-            foreach(var i in Cars)
+
+            Console.WriteLine($"\r\nHär följer en lista över {Name}s bilar: ");
+
+            foreach (var i in Cars)
             {
                 Console.WriteLine($"Modell: {i._model}");
                 Console.WriteLine($"Registreringsnummer: {i.RegNr}");
