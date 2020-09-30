@@ -15,9 +15,6 @@ namespace Klasser
 
             List<Person> Persons = new List<Person>();
 
-            //Lägg in i person-klassen istället!!!
-            List<Car> Cars = new List<Car>();
-
             string name, test, test2;
 
             int numberCars, age;
@@ -28,7 +25,7 @@ namespace Klasser
             //Car car1 = new Car("BMW Z3")
             //{
             //    RegNr = "POI 456",
-            //    RegDate = DateTime.Now, //Varför behövs parse? Varför inte bara kunna skriva datumet 2002-01-01
+            //    RegDate = DateTime.Now,
             //    WeightKg = 1000,
             //    Electric = true,
             //};
@@ -83,8 +80,7 @@ namespace Klasser
                         c.Electric = false;
                     }
 
-                    //Se till så att det stämmer efter att ha lagt till listan "Cars" till person-klassen!
-                    p.Cars.Add(c);
+                    p.AddCar(c);
 
                 }
 
@@ -105,22 +101,8 @@ namespace Klasser
 
             foreach (var x in Persons)
             {
-                foreach(var i in Cars)
-                {
 
-                    Console.WriteLine($"Modell: {i._model}");
-                    Console.WriteLine($"Registreringsnummer: {i.RegNr}");
-                    Console.WriteLine($"Registrerades: {i.RegDate}");
-                    Console.WriteLine($"Vikt: {i.WeightKg}");
-
-                    if (i.Electric)
-                    {
-                        Console.WriteLine("Det här är en elbil.");
-                    }
-
-                    Console.WriteLine();
-
-                }
+                x.ShowCars();
 
             }                      
 
