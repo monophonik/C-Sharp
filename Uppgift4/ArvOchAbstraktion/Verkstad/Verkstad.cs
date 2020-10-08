@@ -131,6 +131,7 @@ namespace ArvOchAbstraktion
             {
                 _lastbilar.Add(fordon as Lastbil);
             }
+            else    //felkontroll
             
         }
 
