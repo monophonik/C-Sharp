@@ -12,44 +12,46 @@ namespace ArvOchAbstraktion
         static void Main(string[] args)
         {
 
+            while (true)
+            {
 
-            Bil bil1 = new Bil() { Modell = "Nissan", HarDrag = true };
+                Bil bil1 = new Bil() { Modell = "Nissan", HarDrag = true };
 
-            IVerkstad stockholm = new Verkstad();
+                IVerkstad stockholm = new Verkstad();
 
-            stockholm.LaggTillFordon(bil1);
+                stockholm.LaggTillFordon(bil1);
 
 
-            //Välj lista att skriva ut, bil etc...
-            //public void ValjLista()
-            //{
-            //    switch (switch_on)
-            //    {
-            //        default:
-            //    }
-            //}
+                //Välj lista att skriva ut, bil etc...
+                //public void ValjLista()
+                //{
+                //    switch (switch_on)
+                //    {
+                //        default:
+                //    }
+                //}
 
-            
 
-            //Funkar ej än
-            //Verkstad.ShowList(_bilar, 0);
 
+                //Funkar ej än
+                //Verkstad.ShowList(_bilar, 0);
+
+                //public static void ValjLista(Fordonstyp fordon)
+                //{
+
+
+                //    switch (fordon)
+                //    {
+                //        case Fordonstyp.bil:
+
+                //        default:
+                //            break;
+                //    }
+                //}
+
+            }
 
         }
-
-
-        //public static void ValjLista(Fordonstyp fordon)
-        //{
-            
-            
-        //    switch (fordon)
-        //    {
-        //        case Fordonstyp.bil:
-
-        //        default:
-        //            break;
-        //    }
-        //}
 
     }
 }

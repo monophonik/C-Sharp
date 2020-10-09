@@ -103,35 +103,35 @@ namespace ArvOchAbstraktion
         {
 
             //Använda switch här eller i main?
-            Fordonstyp x = 0;
+            //Fordonstyp x = 0;
 
-            switch (x)
-            {
-                case Fordonstyp.bil:
+            //switch (x)
+            //{
+            //    case Fordonstyp.bil:
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
             
 
 
             if (fordon is Bil)
             {
-                _bilar.Add(fordon as Bil);
+                Bilar.Add(fordon as Bil);
             }
             else if (fordon is Motorcykel)
             {
-                _motorcyklar.Add(fordon as Motorcykel);
+                Motorcyklar.Add(fordon as Motorcykel);
             }
             else if (fordon is Buss)
             {
-                _bussar.Add(fordon as Buss);
+                Bussar.Add(fordon as Buss);
             }
             else if (fordon is Lastbil)
             {
-                _lastbilar.Add(fordon as Lastbil);
+                Lastbilar.Add(fordon as Lastbil);
             }
-            else    //felkontroll
+            //else    //felkontroll
             
         }
 
